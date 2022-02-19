@@ -1,0 +1,50 @@
+
+
+/*
+//TABLES FOR THE APP
+
+CREATE TABLE IF NOT EXISTS users(
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS todos(
+    id SERIAL PRIMARY KEY,
+    created_by INTEGER REFERENCES users(id),
+    title VARCHAR(255) NOT NULL,
+    description text,
+    completed BOOLEAN DEFAULT false,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    
+
+
+
+);
+
+
+CREATE TABLE IF NOT EXISTS tags(
+    id SERIAL PRIMARY KEY,
+    text VARCHAR(255) NOT NULL,
+    todo_id INTEGER REFERENCES todos(id)
+
+);
+
+*/
+--Insert a new test user
+--INSERT INTO users(email, password) VALUES('test@test.com', 'password');
+
+
+
+
+--Insert some data in todos table
+--INSERT INTO todos(created_by, title, description, completed, created_at) VALUES(1, 'Learn SQL', 'Learn SQL', false, NOW());
+
+
+
+-- select all from users 
+-- SELECT * FROM users;
+
+-- select all from todos
+--select * from todos;
