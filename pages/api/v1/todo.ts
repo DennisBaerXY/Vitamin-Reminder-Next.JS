@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import Error from "next/error";
-import { pool as db } from "../../../app/database";
+import { db } from "../../../app/database";
 import { ITodo, ITodoCreate } from "../../../app/interfaces/TodoInterface";
 
 type Data = {
@@ -62,13 +62,16 @@ export default async function todoHandler(
 
 			try {
 				const { rows } = await db.query(
-					`INSERT INTO todos (created_by,title,description) VALUES ($1, $2, $3) RETURNING *`,
+					"INSERT INTO todos (created_by,title,description) VALUES ($1, $2, $3) RETURNING *",
 					[1, todo.title, todo.description]
 				);
 
-				res.status(200).json({
+				const row: unknown = rows[0];
+				const response: ITodo = row as ITodo;
+
+				res.status(201).json({
 					msg: "Todo created successfully",
-					todo: rows[0],
+					todo: response,
 				});
 			} catch (err: any) {
 				res.status(500).json({
@@ -92,19 +95,11 @@ export default async function todoHandler(
 				errorMsg += "nMissing id\n";
 			}
 
-			if (todo.title === undefined) {
-				return res.status(400).send({
-					msg: (errorMsg += "Missing title\n"),
-				});
-			}
-
 			try {
 				const { rows } = await db.query(
-					`UPDATE todos SET title = $1, description = $2, completed = $3 WHERE id = $4`,
-					[todo.title, todo.description, todo.completed, todo.id]
+					`UPDATE todos SET completed = $1 WHERE id = $2`,
+					[todo.completed, todo.id]
 				);
-
-				console.log(rows[0]);
 
 				res.status(200).json({
 					msg: "Todo updated successfully",

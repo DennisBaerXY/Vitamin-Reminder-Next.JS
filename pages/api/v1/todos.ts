@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import Error from "next/error";
-import { pool as db } from "../../../app/database";
+import { db } from "../../../app/database";
 import { ITodo } from "../../../app/interfaces/TodoInterface";
 
 type Data = {
@@ -16,9 +16,13 @@ export default async function handler(
 	const todos: ITodo[] = [];
 
 	try {
-		const { rows } = await db.query(`SELECT * FROM todos`);
+		const { rows } = await db.query("SELECT * FROM todos", []);
 
-		todos.push(...rows);
+		rows.forEach((todo: any) => {
+			todos.push(todo);
+		});
+
+		//put the data in the right order
 
 		res.status(200).json({
 			todos,
