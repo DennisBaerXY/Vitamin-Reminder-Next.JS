@@ -1,16 +1,25 @@
 import { Checkbox, Container, Stack, Typography } from "@mui/material";
-import { useState } from "react";
+import { NextComponentType, NextPage } from "next";
+import { useEffect, useState } from "react";
+import { ITodo } from "../interfaces/TodoInterface";
 
-const Todo = ({ todo, onChange }) => {
-	const [checked, setChecked] = useState(false);
+type props = {
+	todo: ITodo;
+	onChange: (todo: ITodo) => void;
+};
+
+const Todo = ({ todo, onChange }: props) => {
+	useEffect(() => {
+		console.log(todo);
+	}, [todo]);
 
 	return (
 		<Container>
 			<Stack direction={"row"}>
 				<Checkbox
-					checked={checked}
+					checked={todo.completed}
 					onChange={() => {
-						setChecked(!checked);
+						onChange(todo);
 					}}
 					size={"small"}
 				/>

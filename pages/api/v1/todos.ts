@@ -2,22 +2,21 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import Error from "next/error";
 import { pool as db } from "../../../app/database";
+import { ITodo } from "../../../app/interfaces/TodoInterface";
 
 type Data = {
 	msg?: string;
-	todos?: Todo[];
+	todos?: ITodo[];
 };
 
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<Data>
 ) {
-	const todos: Todo[] = [];
+	const todos: ITodo[] = [];
 
 	try {
-		const { rows } = await db.query(
-			`SELECT * FROM todos WHERE completed = false`
-		);
+		const { rows } = await db.query(`SELECT * FROM todos`);
 
 		todos.push(...rows);
 
