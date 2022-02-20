@@ -1,12 +1,15 @@
 //cypress tests
 
 describe("API crud test", () => {
-	it("fetches Todo items - GET", () => {
-		cy.request("/api/v1/todos").as("todoRequest");
+	it("inserted todo", () => {
+		cy.visit("http://localhost:3000/");
 
-		cy.get("@todoRequest").then((todos) => {
-			expect(todos.status).to.eq(200);
-			assert.isArray(todos.body, "Todos Respond is an array");
-		});
+		cy.get("#text-input").type("test{enter}");
+
+		cy.get("#text-input").type("Hello Nextjs from cypress{enter}");
+
+		cy.get("#todo-list").should("contain", "test");
+
+		cy.get("#todo-list").should("contain", "Hello Nextjs from cypress");
 	});
 });

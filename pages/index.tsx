@@ -118,6 +118,7 @@ const Home: NextPage<props> = () => {
 
 				const newTodos = [...todos, newTodo.todo];
 				setTodos(newTodos);
+				setInput("");
 				return true;
 			} else {
 				return false;
@@ -152,6 +153,7 @@ const Home: NextPage<props> = () => {
 
 						padding: "2rem",
 					}}
+					id="todo-list"
 				>
 					{todos.map((todo: ITodo) => (
 						<Todo
@@ -163,35 +165,46 @@ const Home: NextPage<props> = () => {
 					))}
 				</Stack>
 
-				<Grid
-					container
-					direction={"column"}
-					sx={{
-						margin: "0 auto",
-						maxWidth: "500px",
-						marginBottom: "2rem",
-						marginTop: "1rem",
+				<form
+					onSubmit={(e) => {
+						e.preventDefault();
+
+						insertTodo();
 					}}
 				>
-					<TextField
-						label={"Add todo"}
-						variant="outlined"
-						onChange={(e) => {
-							setInput(e.target.value);
-						}}
-					/>
-
-					<Button
-						variant="contained"
+					<Grid
+						container
+						direction={"column"}
 						sx={{
+							margin: "0 auto",
+							maxWidth: "500px",
+							marginBottom: "2rem",
 							marginTop: "1rem",
 						}}
-						onClick={() => insertTodo()}
-						onSubmit={() => insertTodo()}
 					>
-						Add
-					</Button>
-				</Grid>
+						<TextField
+							label={"Add todo"}
+							variant="outlined"
+							onChange={(e) => {
+								setInput(e.target.value);
+							}}
+							value={input}
+							id="text-input"
+						/>
+
+						<Button
+							variant="contained"
+							type="submit"
+							sx={{
+								marginTop: "1rem",
+							}}
+							onClick={() => insertTodo()}
+							onSubmit={() => insertTodo()}
+						>
+							Add
+						</Button>
+					</Grid>
+				</form>
 			</main>
 		</Container>
 	);
