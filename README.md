@@ -29,26 +29,27 @@ The user can create a new task, edit the task, and delete the task. He can also 
 ## Tasks
 
 ### Design with Figma
-[ ] Create the Design for the Website
+- [x] Create the Design for the Website
+
 
 ### Create the NextJS Components
-[ ] Create the Landing Page
-[ ] Create the Sign Up Page
-[ ] Create the Log In Page
-[ ] Create the Dashboard Page
-[ ] Create the Add a Task Page
-[ ] Create the Edit a Task Page
+- [ ] Create the Landing Page
+- [ ] Create the Sign Up Page
+- [ ] Create the Log In Page
+- [ ] Create the Dashboard Page
+- [ ] Create the Add a Task Page
+- [ ] Create the Edit a Task Page
 
 
 ### Backend
-[ ] Create the Models
-[ ] Create the PostgreSQL Database
-[ ] Create the API
-[ ] Create the Routes
-[ ] Create the Controllers
-[ ] Create the Middlewares
+- [ ] Create the Models
+- [ ] Create the PostgreSQL Database
+- [ ] Create the API
+- [ ] Create the Routes
+- [ ] Create the Controllers
+- [ ] Create the Middlewares
 
-[ ] E2E Testing with Cypress
+- [ ] E2E Testing with Cypress
   
 
 
