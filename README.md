@@ -62,15 +62,15 @@ The user can create a new task, edit the task, and delete the task. He can also 
 ## Planed Design for the Website
 
 ### Landing Page
-![enter image description here](assets\Landing_Page.jpg)
+![Website Landing Page](./assets/Landing_Page.jpg)
 ### Sign Up Page
-![enter image description here](assets\SignupTakeIT.jpg)
+![Website Sign Up Page](./assets/SignupTakeIT.jpg)
 
 ### Log In Page
-![enter image description here](assets\LogInTakeIT.jpg)
+![Website Log in Page](./assets/LogInTakeIT.jpg)
 
 ### Dashboard Page
-![enter image description here](assets\DashboardTakeIT.jpg)
+![Website Dashboard](./assets/DashboardTakeIT.jpg)
 
 ### Add a Task Page
 
