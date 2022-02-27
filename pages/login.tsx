@@ -116,7 +116,7 @@ export default function signupPage() {
 								</Typography>
 
 								<Typography variant="body1">
-									Let's get you logged in real fast so you can check your
+									{"Let's"} get you logged in real fast so you can check your
 									reminders
 								</Typography>
 							</Box>
