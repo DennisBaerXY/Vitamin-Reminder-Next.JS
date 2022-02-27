@@ -1,8 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 
-import { motion } from "framer-motion";
-
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -85,79 +83,38 @@ const Home: NextPage = () => {
 					display="flex"
 					flexDirection={"column"}
 				>
-					<motion.div
-						initial="hidden"
-						animate="visible"
-						variants={{
-							hidden: {
-								y: "25%",
-								opacity: 0,
-							},
-							visible: {
-								y: 0,
-								opacity: 1,
-								transition: {
-									delay: 0.2,
-									duration: 1,
-								},
-							},
-						}}
-					>
-						<Typography variant="h1" width="100%">
-							Create{" "}
-							<span style={{ color: theme.palette.secondary.main }}>
-								{" "}
-								easy{" "}
-							</span>{" "}
-							<br />
-							<span style={{ color: theme.palette.info.main }}>
-								{" "}
-								Reminders{" "}
-							</span>{" "}
-							for your needs.
-						</Typography>
-					</motion.div>
+					<Typography variant="h1" width="100%">
+						Create{" "}
+						<span style={{ color: theme.palette.secondary.main }}> easy </span>{" "}
+						<br />
+						<span style={{ color: theme.palette.info.main }}>
+							{" "}
+							Reminders{" "}
+						</span>{" "}
+						for your needs.
+					</Typography>
 
 					<Box alignItems={"start"} width="25rem" mt={10}>
-						<motion.div
-							initial="hidden"
-							animate="visible"
-							variants={{
-								hidden: {
-									y: "25%",
-									opacity: 0,
-								},
-								visible: {
-									y: 0,
-									opacity: 1,
-									transition: {
-										delay: 0.5,
-										duration: 0.5,
-									},
-								},
-							}}
-						>
-							<Typography variant="h3">Getting Started</Typography>
-							<Typography variant="body1">
-								The first thing you need to do is create an Account. After the
-								Account is created you can start and create your first Reminder
-								so you will never forget it
-							</Typography>
+						<Typography variant="h3">Getting Started</Typography>
+						<Typography variant="body1">
+							The first thing you need to do is create an Account. After the
+							Account is created you can start and create your first Reminder so
+							you will never forget it
+						</Typography>
 
-							<Box mt={3}>
-								<Link href={"/signup"} as="/signup">
-									<a
-										style={{
-											textDecoration: "none",
-										}}
-									>
-										<Button variant="contained" color="success">
-											Create Account
-										</Button>
-									</a>
-								</Link>
-							</Box>
-						</motion.div>
+						<Box mt={3}>
+							<Link href={"/signup"} as="/signup">
+								<a
+									style={{
+										textDecoration: "none",
+									}}
+								>
+									<Button variant="contained" color="success">
+										Create Account
+									</Button>
+								</a>
+							</Link>
+						</Box>
 					</Box>
 				</Box>
 				<Box
@@ -166,30 +123,13 @@ const Home: NextPage = () => {
 						position: "relative",
 					}}
 				>
-					<motion.div
-						initial="hidden"
-						animate="visible"
-						variants={{
-							hidden: {
-								opacity: 0,
-							},
-							visible: {
-								opacity: 1,
-								transition: {
-									delay: 0.6,
-									duration: 0.3,
-								},
-							},
-						}}
-					>
-						<Image
-							src={"/images/undraw_LandingPage.svg"}
-							layout="responsive"
-							width={800}
-							height={600}
-							alt="Picture of a bird holding a Reminder"
-						/>
-					</motion.div>
+					<Image
+						src={"/images/undraw_LandingPage.svg"}
+						layout="responsive"
+						width={800}
+						height={600}
+						alt="Picture of a bird holding a Reminder"
+					/>
 				</Box>
 			</Box>
 		</Box>
