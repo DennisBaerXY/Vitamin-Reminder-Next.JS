@@ -2,7 +2,6 @@ import AlternateEmail from "@mui/icons-material/AlternateEmail";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import Lock from "@mui/icons-material/Lock";
-import Person from "@mui/icons-material/Person";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
@@ -34,22 +33,17 @@ export default function signupPage() {
 						<Typography variant="h3" color={"white"} lineHeight={1}>
 							Take it.
 						</Typography>
-						<Typography variant="h4" color={"white"} lineHeight={1} mt={10}>
-							Welcome! You are only a few Clicks away from using{" "}
-							<span
-								style={{
-									color: theme.palette.warning.main,
-								}}
-							>
-								{" "}
-								Take it.
-							</span>
+						<Typography variant="h4" color={theme.palette.warning.main} mt={7}>
+							Welcome back!
+						</Typography>
+						<Typography variant="h5" color={"white"} lineHeight={1}>
+							Good to see you again we missed you!
 						</Typography>
 					</Box>
 
 					<Box mt={10} position="relative" width="100%" mb={10} mx="auto">
 						<Image
-							src="/images/undraw_festivities_tvvj.svg"
+							src="/images/undraw_game_day_ucx9.svg"
 							layout="responsive"
 							width={600}
 							height={400}
@@ -58,7 +52,7 @@ export default function signupPage() {
 					</Box>
 				</Box>
 				{
-					//Right Box with a Signup Form
+					//Right Box with a Form
 				}
 				<Box height="100vh" width="100%">
 					<Box
@@ -98,7 +92,7 @@ export default function signupPage() {
 						</Box>
 					</Box>
 
-					<Box ml={15} maxWidth="50%">
+					<Box ml={15} maxWidth="50%" mt={10}>
 						<Button color="primary" startIcon={<ArrowBack />}>
 							<Typography variant="body1">Back</Typography>
 						</Button>
@@ -113,7 +107,8 @@ export default function signupPage() {
 							</Typography>
 
 							<Typography variant="body1">
-								Lets get you all set up so you can add your Reminders fast!
+								Let's get you logged in real fast so you can check your
+								reminders
 							</Typography>
 						</Box>
 
@@ -129,26 +124,7 @@ export default function signupPage() {
 							{
 								//add corosponding icon to each input
 							}
-							<Box>
-								<Typography variant="body1" fontWeight={700}>
-									Username
-								</Typography>
-								<TextField
-									variant="outlined"
-									fullWidth
-									color="primary"
-									sx={{
-										backgroundColor: "white",
-									}}
-									InputProps={{
-										startAdornment: (
-											<InputAdornment position="start">
-												<Person color="secondary" />
-											</InputAdornment>
-										),
-									}}
-								/>
-							</Box>
+
 							<Box>
 								<Typography variant="body1" fontWeight={700}>
 									Email
@@ -191,27 +167,6 @@ export default function signupPage() {
 									}}
 								/>
 							</Box>
-							<Box>
-								<Typography variant="body1" fontWeight={700}>
-									Confirm Password
-								</Typography>
-								<TextField
-									variant="outlined"
-									fullWidth
-									color="primary"
-									type="password"
-									sx={{
-										backgroundColor: "white",
-									}}
-									InputProps={{
-										startAdornment: (
-											<InputAdornment position="start">
-												<Lock color="secondary" />
-											</InputAdornment>
-										),
-									}}
-								/>
-							</Box>
 
 							<Box mt={2} width="100%">
 								<Button
@@ -220,11 +175,11 @@ export default function signupPage() {
 									color="success"
 									fullWidth
 								>
-									Create Account
+									Log in
 								</Button>
 							</Box>
 							<Box>
-								<Link href="/login">
+								<Link href="/signup">
 									<a
 										style={{
 											textDecoration: "none",
@@ -232,7 +187,7 @@ export default function signupPage() {
 									>
 										<Button endIcon={<ArrowForward />}>
 											<Typography variant="body1" textTransform={"none"}>
-												Already have an account?
+												You dont have an account?
 											</Typography>
 										</Button>
 									</a>

@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles";
+import { responsiveFontSizes, createTheme } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 
 import "@fontsource/roboto/300.css";
@@ -70,4 +70,4 @@ const theme = createTheme({
 	},
 });
 
-export default theme;
+export default responsiveFontSizes(theme);
