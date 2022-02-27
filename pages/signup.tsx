@@ -26,7 +26,7 @@ export default function signupPage() {
 				<Box
 					height="100vh"
 					bgcolor={"primary.main"}
-					minWidth="350px"
+					minWidth="600px"
 					maxWidth={"38%"}
 					pt={10}
 				>

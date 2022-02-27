@@ -1,6 +1,7 @@
-import type { GetServerSideProps, GetStaticProps, NextPage } from "next";
-import Head from "next/head";
+import type { NextPage } from "next";
 import Image from "next/image";
+
+import { motion } from "framer-motion";
 
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -36,17 +37,34 @@ const Home: NextPage = () => {
 					flexDirection={"row"}
 					alignItems="center"
 				>
-					<Button>Home</Button>
-					<Button>Projects</Button>
+					<Link href="/" passHref>
+						<Button>Home</Button>
+					</Link>
+					<Link href="https://github.com/DennisBaerXY/DennisBaerXY">
+						<a
+							target="_blank"
+							rel="noopener noreferrer"
+							style={{
+								textDecoration: "none",
+							}}
+						>
+							<Button>Projects</Button>
+						</a>
+					</Link>
 				</Box>
 
 				<Box ml={2} display="flex" alignItems="center" gap={2}>
-					<Button variant="contained" color="secondary">
-						Get started
-					</Button>
-					<Button variant="contained" color="secondary">
-						Log in
-					</Button>
+					<Link href="/signup" passHref>
+						<Button variant="contained" color="secondary">
+							Get started
+						</Button>
+					</Link>
+
+					<Link href="/login" passHref>
+						<Button variant="contained" color="secondary" href="/login">
+							Log in
+						</Button>
+					</Link>
 				</Box>
 			</Box>{" "}
 			{
@@ -67,38 +85,79 @@ const Home: NextPage = () => {
 					display="flex"
 					flexDirection={"column"}
 				>
-					<Typography variant="h1" width="100%">
-						Create{" "}
-						<span style={{ color: theme.palette.secondary.main }}> easy </span>{" "}
-						<br />
-						<span style={{ color: theme.palette.info.main }}>
-							{" "}
-							Reminders{" "}
-						</span>{" "}
-						for your needs.
-					</Typography>
+					<motion.div
+						initial="hidden"
+						animate="visible"
+						variants={{
+							hidden: {
+								y: "25%",
+								opacity: 0,
+							},
+							visible: {
+								y: 0,
+								opacity: 1,
+								transition: {
+									delay: 0.2,
+									duration: 1,
+								},
+							},
+						}}
+					>
+						<Typography variant="h1" width="100%">
+							Create{" "}
+							<span style={{ color: theme.palette.secondary.main }}>
+								{" "}
+								easy{" "}
+							</span>{" "}
+							<br />
+							<span style={{ color: theme.palette.info.main }}>
+								{" "}
+								Reminders{" "}
+							</span>{" "}
+							for your needs.
+						</Typography>
+					</motion.div>
 
 					<Box alignItems={"start"} width="25rem" mt={10}>
-						<Typography variant="h3">Getting Started</Typography>
-						<Typography variant="body1">
-							The first thing you need to do is create an Account. After the
-							Account is created you can start and create your first Reminder so
-							you will never forget it
-						</Typography>
+						<motion.div
+							initial="hidden"
+							animate="visible"
+							variants={{
+								hidden: {
+									y: "25%",
+									opacity: 0,
+								},
+								visible: {
+									y: 0,
+									opacity: 1,
+									transition: {
+										delay: 0.5,
+										duration: 0.5,
+									},
+								},
+							}}
+						>
+							<Typography variant="h3">Getting Started</Typography>
+							<Typography variant="body1">
+								The first thing you need to do is create an Account. After the
+								Account is created you can start and create your first Reminder
+								so you will never forget it
+							</Typography>
 
-						<Box mt={3}>
-							<Link href={"/signup"} as="/signup">
-								<a
-									style={{
-										textDecoration: "none",
-									}}
-								>
-									<Button variant="contained" color="success">
-										Create Account
-									</Button>
-								</a>
-							</Link>
-						</Box>
+							<Box mt={3}>
+								<Link href={"/signup"} as="/signup">
+									<a
+										style={{
+											textDecoration: "none",
+										}}
+									>
+										<Button variant="contained" color="success">
+											Create Account
+										</Button>
+									</a>
+								</Link>
+							</Box>
+						</motion.div>
 					</Box>
 				</Box>
 				<Box
@@ -107,13 +166,30 @@ const Home: NextPage = () => {
 						position: "relative",
 					}}
 				>
-					<Image
-						src={"/images/undraw_LandingPage.svg"}
-						layout="responsive"
-						width={800}
-						height={600}
-						alt="Picture of a bird holding a Reminder"
-					/>
+					<motion.div
+						initial="hidden"
+						animate="visible"
+						variants={{
+							hidden: {
+								opacity: 0,
+							},
+							visible: {
+								opacity: 1,
+								transition: {
+									delay: 0.6,
+									duration: 0.3,
+								},
+							},
+						}}
+					>
+						<Image
+							src={"/images/undraw_LandingPage.svg"}
+							layout="responsive"
+							width={800}
+							height={600}
+							alt="Picture of a bird holding a Reminder"
+						/>
+					</motion.div>
 				</Box>
 			</Box>
 		</Box>
