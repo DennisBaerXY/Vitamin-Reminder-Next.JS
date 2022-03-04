@@ -27,6 +27,7 @@ const theme = createTheme({
 	palette: {
 		primary: {
 			main: "#2D2C2C",
+			contrastText: "#fff",
 		},
 		secondary: {
 			main: "#C71A01",
@@ -52,6 +53,7 @@ const theme = createTheme({
 	},
 	typography: {
 		fontFamily: ["Amiko", "Roboto"].join(","),
+
 		body1: {
 			fontFamily: "overpass",
 		},

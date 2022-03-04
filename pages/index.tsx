@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const Home: NextPage = () => {
 	return (
-		<Box>
+		<Box maxHeight={"100vh"}>
 			<Box
 				display={"flex"}
 				m={5}
@@ -83,7 +83,7 @@ const Home: NextPage = () => {
 					display="flex"
 					flexDirection={"column"}
 				>
-					<Typography variant="h1" width="100%">
+					<Typography variant={"h1"} width="100%">
 						Create{" "}
 						<span style={{ color: theme.palette.secondary.main }}> easy </span>{" "}
 						<br />
@@ -94,7 +94,16 @@ const Home: NextPage = () => {
 						for your needs.
 					</Typography>
 
-					<Box alignItems={"start"} width="25rem" mt={10}>
+					<Box
+						alignItems={"start"}
+						width="25rem"
+						mt={{
+							xl: "5rem",
+							lg: "3rem",
+							md: "1rem",
+							sm: "1rem",
+						}}
+					>
 						<Typography variant="h3">Getting Started</Typography>
 						<Typography variant="body1">
 							The first thing you need to do is create an Account. After the
